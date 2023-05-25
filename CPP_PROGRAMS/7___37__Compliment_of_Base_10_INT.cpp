@@ -19,6 +19,7 @@ int main()
         int bit = n & 1;
 
         // We can not do directly ~bit. Because it will not all 32 bit and becomes negative value
+        // bit = ~bit   Will not work
         if (bit == 1)
         {
             bit = 0;
