@@ -1,0 +1,7 @@
+1)  -ve Decimal to Binary
+2)  -ve Binary to Decimal
+3)  Octal to Decimal & Binary
+4)  Hexa Decimal to Decimal & Binary
+5)  Hexa Decimal to Octal
+
+

@@ -1,0 +1,22 @@
+1   - 140: TOTAL
+
+8 : 1   - 8  : Learn C++ Language
+2 : 9   - 10 : Array
+1 : 11  - 11 : Time & Space Complexity
+7 : 12  - 18 : Searching & Sorting + (35, 36)
+6 : 19  - 24 : C++ STD, Array, String, Maths
+3 : 25  - 27 : Pointers in C++
+3 : 28  - 30 : Memory Management
+11: 31  - 41 : Recursion
+2 : 42  - 43 : OOPs in C++
+10: 44  - 53 : Linked List
+8 : 54  - 61 : Stack & Queue
+7 : 62  - 68 : Binary Trees
+5 : 69  - 73 : Binary Search Tree
+4 : 74  - 77 : Heap & Its Implementation
+1 : 78  - 78 : Hashmaps
+3 : 79  - 81 : Trie & Its Implementation
+3 : 82  - 84 : Backtracking
+17: 85  - 101: Graph
+38: 102 - 139: Dynamic Programming 
+1 : 140 - 140: Greedy Algorithms
