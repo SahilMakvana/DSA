@@ -11,6 +11,12 @@ int main()
     cout << "Enter The Value... ";
     cin >> n;
 
+    if (n == 0)
+    {
+        cout << "No" << endl;
+        return 0;
+    }
+
     while (n != 1)
     {
 
