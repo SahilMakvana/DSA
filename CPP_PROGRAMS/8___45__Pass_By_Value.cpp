@@ -1,36 +1,23 @@
 /*
-    nCr
+    Pass By Value
 */
 #include <iostream>
 using namespace std;
 
-int factorial(int n)
+int dummy(int n)
 {
-    int ans = 1;
-
-    if (n == 0)
-    {
-        return 1;
-    }
-
-    for (int i = n; i > 0; i--)
-    {
-        ans = ans * i;
-    }
-    return ans;
-}
-
-int nCr()
-{
-    int n, r;
-    cin >> n >> r;
-    int ans = factorial(n) / (factorial(r) * factorial(n - r));
-    cout << ans << endl;
+    n++;
+    cout << "dummy n is: " << n << endl;
     return 0;
 }
 
 int main()
 {
-    nCr();
-    return 0;
+    int n;
+    cin >> n;
+
+    // Passing by value
+    dummy(n);
+
+    cout << "main n is: " << n << endl;
 }
