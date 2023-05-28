@@ -23,18 +23,17 @@ int main()
     }
     else if (n == 2)
     {
-        cout << 1 << endl;
+        cout << 0 << " " << 1 << endl;
         return 0;
     }
-
+    cout << 0 << " " << 1;
     for (int i = 2; i < n; i++)
     {
         FS = a + b;
         a = b;
         b = FS;
+        cout << " " << FS;
     }
-
-    cout << FS << endl;
 
     return 0;
 }
