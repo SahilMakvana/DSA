@@ -1,5 +1,5 @@
 /*
-    Minimum & Maximum in array
+    Minimum & Maximum in an array
 */
 #include <iostream>
 #include <limits.h>
