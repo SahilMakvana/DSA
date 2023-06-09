@@ -4,4 +4,12 @@
 4)  Hexa Decimal to Decimal & Binary
 5)  Hexa Decimal to Octal
 
+ARRAY
+6)  Find Unique element in an array where all element occurs K times except one
+7)  Unique number of occurance
+    {1, 2, 2, 1, 1, 3}  --> True
+    {1, 1, 2, 2}        --> False
+    {1, 2}              --> False
+
+
 
