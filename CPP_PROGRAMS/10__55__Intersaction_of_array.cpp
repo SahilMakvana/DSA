@@ -1,38 +1,34 @@
 /*
-    Find duplicate in an array
+    Find Intersaction of two different array
 */
 #include <iostream>
+#include <limits.h>
 using namespace std;
 
-int findDuplicate(int arr[], int size)
+int findDuplicate(int arr1[], int size1, int arr2[], int size2)
 {
-    int ans = 0;
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size1; i++)
     {
-        ans = ans ^ arr[i];
-    }
-    for (int i = 1; i < size; i++)
-    {
-        ans = ans ^ i;
+        for (int j = 0; j < size2; j++)
+        {
+            if (arr1[i] == arr2[j])
+            {
+                cout << arr1[i] << " ";
+                arr2[j] = INT_MIN;
+                break;
+            }
+        }
     }
 
-    return ans;
+    return 0;
 }
 
 int main()
 {
-    int size;
-    cout << "Enter the size of an array: " << endl;
-    cin >> size;
+    int arr1[6] = {1, 2, 2, 2, 3, 4};
+    int arr2[4] = {2, 2, 3, 3};
 
-    int arr[size];
+    findDuplicate(arr1, 6, arr2, 4);
 
-    for (int i = 0; i < size; i++)
-    {
-        cin >> arr[i];
-    }
-
-    int duplicate = findDuplicate(arr, size);
-    cout << duplicate << endl;
     return 0;
 }
