@@ -1,5 +1,5 @@
 /*
-    Binary Search
+    Left & Right occurance of an element in an array
 */
 #include <iostream>
 #include <limits.h>
