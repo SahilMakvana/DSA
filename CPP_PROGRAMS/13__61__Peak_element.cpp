@@ -41,6 +41,7 @@ int peakElement(int arr[], int size)
                 end = mid - 1;
             }
         }
+        return arr[start]
     */
 
     return -1;
