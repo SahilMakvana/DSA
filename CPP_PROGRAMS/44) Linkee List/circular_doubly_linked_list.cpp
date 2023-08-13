@@ -1,5 +1,5 @@
 /*
-    Singly Linked List
+    Circular Doubly Linked List
 */
 #include <iostream>
 #include <bits/stdc++.h>
@@ -9,11 +9,13 @@ class Node
 {
 public:
     int data;
+    Node *prev;
     Node *next;
 
     Node(int data)
     {
         this->data = data;
+        this->prev = NULL;
         this->next = NULL;
     }
 
@@ -34,6 +36,7 @@ void insertAfterValue(Node *&tail, int d, int element)
         Node *temp = new Node(d);
         tail = temp;
         temp->next = temp;
+        temp->prev = temp;
     }
     else
     {
@@ -45,8 +48,10 @@ void insertAfterValue(Node *&tail, int d, int element)
         }
 
         Node *temp = new Node(d);
+        curr->next->prev = temp;
         temp->next = curr->next;
         curr->next = temp;
+        temp->prev = curr;
     }
 }
 
@@ -60,6 +65,7 @@ void deleteGivenValue(Node *&tail, int value)
     else if (tail->next == tail)
     {
         tail->next = NULL;
+        tail->prev = NULL;
         delete tail;
         tail = NULL;
         return;
@@ -80,8 +86,10 @@ void deleteGivenValue(Node *&tail, int value)
             tail = tail->next;
         }
 
+        curr->next->prev = prev;
         prev->next = curr->next;
         curr->next = NULL;
+        curr->prev = NULL;
         delete curr;
     }
 }
