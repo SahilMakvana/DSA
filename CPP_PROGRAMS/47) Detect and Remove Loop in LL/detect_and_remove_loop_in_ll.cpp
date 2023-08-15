@@ -151,6 +151,86 @@ void print(Node *&head)
     cout << endl;
 }
 
+Node *floydDetectLoop(Node *head)
+{
+    if (head == NULL)
+    {
+        return NULL;
+    }
+
+    Node *slow = head;
+    Node *fast = head;
+
+    while (fast != NULL)
+    {
+        fast = fast->next;
+        if (fast != NULL)
+        {
+            fast = fast->next;
+        }
+
+        slow = slow->next;
+
+        if (slow == fast)
+        {
+            cout << "Loop is Present" << endl;
+            return slow;
+        }
+    }
+
+    cout << "Loop is not Present" << endl;
+    return NULL;
+}
+
+Node *getStartingNode(Node *head)
+{
+    if (head == NULL)
+    {
+        return NULL;
+    }
+
+    Node *intersection = floydDetectLoop(head);
+
+    if (intersection == NULL)
+    {
+        return NULL;
+    }
+    Node *slow = head;
+
+    while (slow != intersection)
+    {
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+
+    return slow;
+}
+
+Node *removeLoop(Node *head)
+{
+    if (head == NULL)
+    {
+        return NULL;
+    }
+
+    Node *startingOfLoop = getStartingNode(head);
+
+    if (startingOfLoop == NULL)
+    {
+        return head;
+    }
+
+    Node *temp = startingOfLoop;
+
+    while (temp->next != startingOfLoop)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = NULL;
+    return head;
+}
+
 int main()
 {
     Node *node1 = new Node(10);
@@ -161,62 +241,71 @@ int main()
     Node *tail = node1;
     print(head);
 
-    insertAtHead(head, 12);
+    insertAtTail(tail, 12);
     print(head);
 
-    insertAtHead(head, 15);
+    insertAtTail(tail, 15);
     print(head);
 
-    insertAtTail(tail, 20);
+    insertAtTail(tail, 22);
     print(head);
 
-    insertAtAnyPosition(head, tail, 14, 3);
-    print(head);
+    tail->next = head->next;
 
-    insertAtAnyPosition(head, tail, 22, 6);
-    print(head);
+    // floydDetectLoop(head);
+    Node *head = removeLoop(head);
+    // print(head);
 
-    insertAtTail(tail, 23);
-    print(head);
+    /*
+        insertAtAnyPosition(head, tail, 14, 3);
+        print(head);
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+        insertAtAnyPosition(head, tail, 22, 6);
+        print(head);
 
-    deleteNodeByPosition(head, tail, 1);
-    print(head);
+        insertAtTail(tail, 23);
+        print(head);
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
 
-    deleteNodeByValue(head, tail, 12);
-    print(head);
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+        deleteNodeByPosition(head, tail, 1);
+        print(head);
 
-    deleteNodeByValue(head, tail, 23);
-    print(head);
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+        deleteNodeByValue(head, tail, 12);
+        print(head);
 
-    deleteNodeByPosition(head, tail, 2);
-    print(head);
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+        deleteNodeByValue(head, tail, 23);
+        print(head);
 
-    deleteNodeByValue(head, tail, 20);
-    print(head);
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+        deleteNodeByPosition(head, tail, 2);
+        print(head);
 
-    deleteNodeByValue(head, tail, 22);
-    print(head);
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
 
-    cout << "Head: " << head->data << endl;
-    cout << "Tail: " << tail->data << endl;
+        deleteNodeByValue(head, tail, 20);
+        print(head);
+
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
+
+        deleteNodeByValue(head, tail, 22);
+        print(head);
+
+        cout << "Head: " << head->data << endl;
+        cout << "Tail: " << tail->data << endl;
+        */
 
     return 0;
 }
