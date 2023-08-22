@@ -225,8 +225,8 @@ int main()
     insertAtTail(tail1, 3);
     print(first);
 
-    insertAtTail(tail1, 5);
-    print(first);
+    // insertAtTail(tail1, 5);
+    // print(first);
 
     Node *second = new Node(2);
 
